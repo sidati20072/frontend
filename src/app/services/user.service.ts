@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Subject } from 'rxjs/Subject';
+import {User} from '../Models/User.model';
+import {AuthentificationService} from './authentification.service';
 
 
 @Injectable({
@@ -8,14 +10,16 @@ import { Subject } from 'rxjs/Subject';
 })
 export class UserService {
 
-  host: string = 'http://localhost:8181/signup';
+  host: string = 'http://localhost:8181/';
+  host2: string = 'http://localhost:8180/';
+  message: string;
 
-  constructor(private httpClient: HttpClient ) {   }
+
+    constructor(private httpClient: HttpClient , private authService : AuthentificationService) {   }
 
 
   createUserByEmail(form) {
-    console.log(form);
-    this.httpClient.post(this.host, form).subscribe(
+    this.httpClient.post(this.host + 'signup', form).subscribe(
 
         (value) => {
           console.log("user created" + value);
@@ -24,4 +28,32 @@ export class UserService {
         }
     );
   }
+
+
+     createEntreprise(user){
+
+         const httpOptions = {
+             headers: new HttpHeaders({
+                 'Content-Type': 'application/json',
+             })
+         }
+      this.httpClient.post(this.host2 + 'users', user , httpOptions).subscribe(
+
+            (value) => {
+
+                   this.message = "created";
+            },error1 => {
+
+               this.message = " error de creation";
+                console.log("erreur de creation utilisateur " + error1);
+            }
+        );
+            return this.message;
+    }
+
+    getUsers() {
+
+        return null;
+
+    }
 }

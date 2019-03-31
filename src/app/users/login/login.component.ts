@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {AuthentificationService} from '../../services/authentification.service';
 import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss' ],
+
 })
 export class LoginComponent implements OnInit {
 
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(data){
+      console.log(data);
     this.authService.login(data).subscribe(
         resp => {
           console.log(resp.headers.get('authorization'));

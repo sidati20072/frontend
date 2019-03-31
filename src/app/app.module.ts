@@ -29,6 +29,12 @@ import { TabsComponent } from './tabs/tabs.component';
 import { UserComponent } from './users/user/user.component';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './users/login/login.component';
+import { AdminLayoutComponent } from './_layout/admin-layout/admin-layout.component';
+import { UserLayoutComponent } from './_layout/user-layout/user-layout.component';
+import { AccueilComponent } from './frontPublic/accueil/accueil.component';
+import { CreateEntrepriseComponent } from './frontPublic/create-entreprise/create-entreprise.component';
+import { NavbarPublicComponent } from './frontPublic/navbar-public/navbar-public.component';
+import { FooterPublicComponent } from './frontPublic/footer-public/footer-public.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +59,13 @@ import { LoginComponent } from './users/login/login.component';
     CarouselComponent,
     TabsComponent,
     UserComponent,
-    LoginComponent
+    LoginComponent,
+    AdminLayoutComponent,
+    UserLayoutComponent,
+    AccueilComponent,
+    CreateEntrepriseComponent,
+    NavbarPublicComponent,
+    FooterPublicComponent
   ],
   imports: [
     BrowserModule,

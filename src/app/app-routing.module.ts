@@ -19,28 +19,57 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { TabsComponent } from './tabs/tabs.component';
 import {UserComponent} from './users/user/user.component';
 import {LoginComponent} from './users/login/login.component';
+import {AdminLayoutComponent} from './_layout/admin-layout/admin-layout.component';
+import {UserLayoutComponent} from './_layout/user-layout/user-layout.component';
+import {AccueilComponent} from './frontPublic/accueil/accueil.component';
+import {CreateEntrepriseComponent} from './frontPublic/create-entreprise/create-entreprise.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'users', component: UserComponent },
-  { path: 'forms', component: FormsComponent },
-  { path: 'buttons', component: ButtonsComponent },
-  { path: 'tables', component: TablesComponent },
-  { path: 'icons', component: IconsComponent },
-  { path: 'typography', component: TypographyComponent },
-  { path: 'alerts', component: AlertsComponent },
-  { path: 'accordions', component: AccordionsComponent },
-  { path: 'badges', component: BadgesComponent },
-  { path: 'progressbar', component: ProgressbarComponent },
-  { path: 'breadcrumbs', component: BreadcrumbsComponent },
-  { path: 'pagination', component: PaginationComponent },
-  { path: 'dropdowns', component: DropdownComponent },
-  { path: 'tooltips', component: TooltipsComponent },
-  { path: 'carousel', component: CarouselComponent },
-  { path: 'tabs', component: TabsComponent }
+
+  {
+    path: '',
+    component: AdminLayoutComponent,
+    children: [
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'users', component: UserComponent },
+      { path: 'forms', component: FormsComponent },
+      { path: 'buttons', component: ButtonsComponent },
+      { path: 'tables', component: TablesComponent },
+      { path: 'icons', component: IconsComponent },
+      { path: 'typography', component: TypographyComponent },
+      { path: 'alerts', component: AlertsComponent },
+      { path: 'accordions', component: AccordionsComponent },
+      { path: 'badges', component: BadgesComponent },
+      { path: 'progressbar', component: ProgressbarComponent },
+      { path: 'breadcrumbs', component: BreadcrumbsComponent },
+      { path: 'pagination', component: PaginationComponent },
+      { path: 'dropdowns', component: DropdownComponent },
+      { path: 'tooltips', component: TooltipsComponent },
+      { path: 'carousel', component: CarouselComponent },
+      { path: 'tabs', component: TabsComponent }
+    ]
+  },
+
+  // App routes goes here here
+  {
+    path: 'public',
+    component: UserLayoutComponent,
+    children: [
+      { path: 'accueil', component: AccueilComponent },
+      { path: 'entreprise', component: CreateEntrepriseComponent },
+
+
+    ]
+  },
+
+  { path: 'login', component: LoginComponent},
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
 ];
+
+
+export const routing = RouterModule.forRoot(routes);
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
