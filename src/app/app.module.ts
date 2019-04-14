@@ -35,6 +35,11 @@ import { AccueilComponent } from './frontPublic/accueil/accueil.component';
 import { CreateEntrepriseComponent } from './frontPublic/create-entreprise/create-entreprise.component';
 import { NavbarPublicComponent } from './frontPublic/navbar-public/navbar-public.component';
 import { FooterPublicComponent } from './frontPublic/footer-public/footer-public.component';
+import { CreateOffreComponent } from './frontEntreprise/offres/create-offre/create-offre.component';
+import { CompteComponent } from './frontEntreprise/compte/compte.component';
+import { ProfileComponent } from './frontEntreprise/profile/profile.component';
+import { EntrepriseComponent } from './frontEntreprise/entreprise/entreprise.component';
+import { ListOffreComponent } from './frontEntreprise/offres/list-offre/list-offre.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +70,12 @@ import { FooterPublicComponent } from './frontPublic/footer-public/footer-public
     AccueilComponent,
     CreateEntrepriseComponent,
     NavbarPublicComponent,
-    FooterPublicComponent
+    FooterPublicComponent,
+    CreateOffreComponent,
+    CompteComponent,
+    ProfileComponent,
+    EntrepriseComponent,
+    ListOffreComponent
   ],
   imports: [
     BrowserModule,

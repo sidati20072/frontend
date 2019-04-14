@@ -23,6 +23,10 @@ import {AdminLayoutComponent} from './_layout/admin-layout/admin-layout.componen
 import {UserLayoutComponent} from './_layout/user-layout/user-layout.component';
 import {AccueilComponent} from './frontPublic/accueil/accueil.component';
 import {CreateEntrepriseComponent} from './frontPublic/create-entreprise/create-entreprise.component';
+import {CreateOffreComponent} from './frontEntreprise/offres/create-offre/create-offre.component';
+import {CompteComponent} from './frontEntreprise/compte/compte.component';
+import {ProfileComponent} from './frontEntreprise/profile/profile.component';
+import {EntrepriseComponent} from './frontEntreprise/entreprise/entreprise.component';
 
 const routes: Routes = [
 
@@ -33,6 +37,8 @@ const routes: Routes = [
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'users', component: UserComponent },
+   //   { path: 'compte', component: CompteComponent },
+      { path: 'offres/create', component: CreateOffreComponent },
       { path: 'forms', component: FormsComponent },
       { path: 'buttons', component: ButtonsComponent },
       { path: 'tables', component: TablesComponent },
@@ -60,6 +66,15 @@ const routes: Routes = [
       { path: 'entreprise', component: CreateEntrepriseComponent },
 
 
+    ]
+  },
+
+  {
+    path: 'compte',
+    component: CompteComponent,
+    children: [
+      { path: 'profile', component: ProfileComponent },
+      { path: 'entreprise', component: EntrepriseComponent },
     ]
   },
 
