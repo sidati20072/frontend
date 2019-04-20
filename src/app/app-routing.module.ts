@@ -73,8 +73,8 @@ const routes: Routes = [
     path: 'compte',
     component: CompteComponent,
     children: [
-      { path: 'profile', component: ProfileComponent },
-      { path: 'entreprise', component: EntrepriseComponent },
+      { path: 'profile/:id', component: ProfileComponent },
+      { path: 'entreprise/:id', component: EntrepriseComponent },
     ]
   },
 

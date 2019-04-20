@@ -16,7 +16,7 @@ export class UserService {
   message: string;
   users: User[];
   user: User;
-
+  currentUser : User;
 
     constructor(private httpClient: HttpClient , private authService : AuthentificationService) {   }
 
@@ -57,4 +57,36 @@ export class UserService {
          return this.httpClient.get<User[]>(this.host2 + 'membres', httpOptions);
 
     }
+
+    getUser(id: any) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Authorization':  this.authService.jwt
+            })
+        };
+        return this.httpClient.get<User>(this.host2 + 'membres/'+id, httpOptions);
+    }
+
+    updateUser(user: number, value: any) {
+
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Authorization':  this.authService.jwt
+            })
+        };
+        return this.httpClient.patch(this.host2 + 'membres/'+user,value, httpOptions);    }
+
+    getCurrentUser() {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Authorization':  this.authService.jwt
+            })
+        };
+        let uri = this.host2+'membres/search/findByUsername?username=';
+            console.log("serahced by"+this.authService.username);
+        return this.httpClient.get<User>(uri+this.authService.username, httpOptions);
+    }
+
+
+
 }
