@@ -40,6 +40,16 @@ import { CompteComponent } from './frontEntreprise/compte/compte.component';
 import { ProfileComponent } from './frontEntreprise/profile/profile.component';
 import { EntrepriseComponent } from './frontEntreprise/entreprise/entreprise.component';
 import { ListOffreComponent } from './frontEntreprise/offres/list-offre/list-offre.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
+import {MaterialModule} from './Material';
+
 
 @NgModule({
   declarations: [
@@ -83,9 +93,11 @@ import { ListOffreComponent } from './frontEntreprise/offres/list-offre/list-off
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
-  providers: [],
+  providers: [    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

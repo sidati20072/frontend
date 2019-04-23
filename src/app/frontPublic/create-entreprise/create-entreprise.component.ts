@@ -22,17 +22,7 @@ export class CreateEntrepriseComponent implements OnInit {
 
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
     this.user = new User();
-
-    this.user.username = form.value['email'];
-    this.user.password = form.value['password'];
-    this.user.email = form.value['email'];
-    this.user.civilite = form.value['civilite'];
-    this.user.fonction = form.value['fonction'];
-    this.user.nom = form.value['nom'];
-    this.user.prenom = form.value['prenom'];
-    this.user.entreprise = new Entreprise(form.value['nomentreprise'], form.value['addressentreprise'], form.value['logo']);
 
     this.message = this.userService.createEntreprise(form.value);
     if (this.message=="created"){

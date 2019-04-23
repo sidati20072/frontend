@@ -27,6 +27,7 @@ import {CreateOffreComponent} from './frontEntreprise/offres/create-offre/create
 import {CompteComponent} from './frontEntreprise/compte/compte.component';
 import {ProfileComponent} from './frontEntreprise/profile/profile.component';
 import {EntrepriseComponent} from './frontEntreprise/entreprise/entreprise.component';
+import {ListOffreComponent} from './frontEntreprise/offres/list-offre/list-offre.component';
 
 const routes: Routes = [
 
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: 'users', component: UserComponent },
    //   { path: 'compte', component: CompteComponent },
       { path: 'offres/create', component: CreateOffreComponent },
+      { path: 'offres', component: ListOffreComponent },
       { path: 'forms', component: FormsComponent },
       { path: 'buttons', component: ButtonsComponent },
       { path: 'tables', component: TablesComponent },
@@ -53,7 +55,7 @@ const routes: Routes = [
       { path: 'dropdowns', component: DropdownComponent },
       { path: 'tooltips', component: TooltipsComponent },
       { path: 'carousel', component: CarouselComponent },
-      { path: 'tabs', component: TabsComponent }
+      { path: 'tabs', component: TabsComponent },
     ]
   },
 

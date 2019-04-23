@@ -1,184 +1,90 @@
-<div class="row">
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Create Offre</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
 
-<div class="col-12 grid-margin">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Offre</h4>
-            <form class="form-sample">
-                <p class="card-description">
-                    Personal info
-                </p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Objet</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="objet"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Description</label>
-                            <div class="col-sm-9">
-                                <textarea class="form-control" id="exampleTextarea1" name="description" rows="2"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Type</label>
-                            <div class="col-sm-9">
-                                <select class="form-control" name="type">
-                                    <option>National</option>
-                                    <option>Internationnal</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Date Limite</label>
-                            <div class="col-sm-9">
-                                <input class="form-control" name="datelimite" placeholder="dd/mm/yyyy"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Category</label>
-                            <div class="col-sm-9">
-                                <select class="form-control" name="categorie">
-                                    <option>Category1</option>
-                                    <option>Category2</option>
-                                    <option>Category3</option>
-                                    <option>Category4</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Date d'execution</label>
-                            <div class="col-sm-4">
-                                <div class="form-radio">
-                                    <label class="form-check-label">
-                                        <input class="form-control" name="dateexecution" placeholder="dd/mm/yyyy"/>
 
-                                    </label>
-                                </div>
-                            </div>
+        <form class="form-sample" (ngSubmit)="onSubmit(f)" #f="ngForm">
 
-                        </div>
-                    </div>
-                </div>
-                <p class="card-description">
-                    Address
-                </p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Address 1</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">State</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Address 2</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Postcode</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">City</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Country</label>
-                            <div class="col-sm-9">
-                                <select class="form-control">
-                                    <option>Mauritanie</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="col-md-6 grid-margin">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Document</h4>
+
             <div class="row">
-                <div class="col-md-6">
-                    <p class="card-description">
-                        Cahier de charge
-                    </p>
-                    <input id="cahiercharge" type="file" class="form-control" name="cahiercharge"/>
+                <div class="col">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Objet" name="objet" ngModel required>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Type</mat-label>
+                        <mat-select name="type" ngModel >
+                            <mat-option value="national"> National</mat-option>
+                            <mat-option value="internationnal">Internationnal </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Secteur</mat-label>
+                        <mat-select name="categorie" ngModel>
+                            <mat-option *ngFor="let category of categories"  [value]="category.id"> {{category.name}} {{category.id}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <textarea matInput placeholder="Address" ngModel name="address"></textarea>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>City</mat-label>
+                        <mat-select name="city" ngModel >
+                            <mat-option value="nouakchott"> Nouakchott</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+
                 </div>
-                <div class="col-md-6">
-                    <p class="card-description">
-                        Autre document
-                    </p>
-                    <input id="autredocument" name="autredocument" type="file" class="form-control" />
+
+
+                <div class="col">
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker" placeholder="Date Limit" name="dateLimite" ngModel>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker2" placeholder="Date d'execution" name="dateExecution" ngModel>
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Pays</mat-label>
+                        <mat-select name="pays" ngModel >
+                            <mat-option value="mauritanie"> Mauritanie</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput  placeholder="upload image" name="image" ngModel >
+                    </mat-form-field>
+
+
                 </div>
+
+                <mat-form-field class="example-full-width">
+                    <textarea matInput  placeholder="description" rows="10"  ngModel name="description"></textarea>
+                </mat-form-field>
+
             </div>
-        </div>
-    </div>
-</div>
-<div class="col-md-6 grid-margin">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Image</h4>
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="card-description">
-                        Image
-                    </p>
-                    <input id="imageoffre" name="imageoffre" type="file" class="form-control" />
-                </div>
-                <div class="col-md-6">
-                    <p class="card-description">
-                        Autre image
-                    </p>
-                    <input id="autreimage" name="autreimage" type="file" class="form-control" />
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+
+
+            <button type="submit" mat-raised-button>Create</button>
+            <button type="reset" mat-raised-button>Reset</button>
+
+        </form>
+
+    </mat-card-content>
+
+</mat-card>

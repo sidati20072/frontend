@@ -21,7 +21,7 @@ export class SidebarComponent implements OnInit {
          console.log("erreur de recuperation current user");
 
        }
-   )
+   );
   }
 
   constructor(private authservice: AuthentificationService , private userService : UserService) {}
@@ -32,7 +32,6 @@ export class SidebarComponent implements OnInit {
   }
 
   isUser() {
-    console.log('isUser' + this.authservice.isUser());
     return this.authservice.isUser();
   }
 

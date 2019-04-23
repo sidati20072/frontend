@@ -12,9 +12,17 @@ export class UserComponent implements OnInit {
     users: User[];
     userInvite: User;
     message: string;
+    currentUser : User;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
+     this.userService.getCurrentUser().subscribe(
+         value => {
+             this.currentUser = value;
+         },error1 => {
+             console.log('erreur fetch current user');
+         }
+     );
     this.getUsers();
 
   }

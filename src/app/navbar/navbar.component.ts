@@ -31,12 +31,10 @@ export class NavbarComponent implements OnInit {
   }
 
   isUser() {
-    console.log('isUser' + this.authservice.isUser());
     return this.authservice.isUser();
   }
 
   isAuthenticated() {
-    console.log('isAuth' + this.authservice.isAuthenticated());
     return this.authservice.isAuthenticated();
   }
 
